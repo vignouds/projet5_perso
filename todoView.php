@@ -15,7 +15,7 @@
 	}
 	$todoList->closeCursor();
 	?>
-	<form method="post" action="traitement.php">
+	<form action="index.php?action=addTodo" method="post">
 		<input type="text" name="todo">
 		<input type="submit" value="Envoyer">
 	</form>
