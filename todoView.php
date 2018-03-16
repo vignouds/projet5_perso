@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,7 @@
 	while ($data = $todoList->fetch()) 
 	{ 
 		echo $data['content']; ?>
-	<a href="delete.php?todo=<?php echo $data['id']; ?>">Supprimer</a><br />
+	<a href="index.php?action=deleteTodo&id=<?= $data['id']; ?>">Supprimer</a><br />
 	<?php
 	}
 	$todoList->closeCursor();

@@ -28,3 +28,12 @@ function insertTodo($task)
 
 	return $affectedLines;
 }
+
+function deleteTodo($id)
+{
+	$db = dbConnect();
+	$req = $db->prepare('DELETE FROM todo WHERE id = ?');
+	$affectedLines = $req->execute(array($id));
+
+	return $affectedLines;
+}

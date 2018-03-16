@@ -20,3 +20,15 @@ function addTodo($task)
         header('Location: index.php');
     }
 }
+
+function delTodo($id)
+{
+	$affectedLines = deleteTodo($id);
+
+	if ($affectedLines === false) {
+    	die('Impossible de supprimer la tâche !');
+    }
+    else {
+        header('Location: index.php');
+    }
+}

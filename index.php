@@ -10,6 +10,9 @@ if (isset($_GET['action'])) {
 			"Erreur : champs vide !";
 		}		
 	}
+	elseif ($_GET['action'] == 'deleteTodo') {
+		delTodo($_GET['id']);
+	}
 	else {
 		listTodo();
 	}
