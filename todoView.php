@@ -8,7 +8,7 @@
 	<?php
 	while ($data = $todoList->fetch()) 
 	{ 
-		echo $data['content']; ?>
+		echo htmlspecialchars($data['content']); ?>
 	<a href="index.php?action=deleteTodo&id=<?= $data['id']; ?>">Supprimer</a><br />
 	<?php
 	}
