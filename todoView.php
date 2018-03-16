@@ -5,17 +5,25 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<?php
+	<h1>To do list</h1>
+	<table>
+		
+			<?php
 	while ($data = $todoList->fetch()) 
 	{ 
-		echo htmlspecialchars($data['content']); ?>
-	<a href="index.php?action=deleteTodo&id=<?= $data['id']; ?>">Supprimer</a><br />
-	<?php
+	?>
+		<tr>
+			<td> <?= htmlspecialchars($data['content']); ?>	</td>
+			<td><a href="index.php?action=deleteTodo&id=<?= $data['id']; ?>">Supprimer</a></td>
+		</tr>
+		<?php
 	}
 	$todoList->closeCursor();
-	?>
+	?>	
+	</table>
+	<br>
 	<form action="index.php?action=addTodo" method="post">
-		<input type="text" name="todo">
+		<label>Ajouter une tâche : </label><input type="text" name="todo">
 		<input type="submit" value="Envoyer">
 	</form>
 </body>
