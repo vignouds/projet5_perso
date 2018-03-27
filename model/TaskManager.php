@@ -6,7 +6,7 @@ class TaskManager extends Manager
 	public function getTask()
 	{
 		$db = $this->dbConnect();
-		$req = $db->query('SELECT * FROM todo');
+		$req = $db->query('SELECT * FROM todo WHERE category = "task"');
 
 		return $req;
 	}
@@ -14,7 +14,7 @@ class TaskManager extends Manager
 	function insertTask($task)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('INSERT INTO todo (content) VALUES (?)');
+		$req = $db->prepare('INSERT INTO todo (content, category) VALUES (?, "task")');
 		$affectedLines = $req->execute(array($task));
 
 		return $affectedLines;
