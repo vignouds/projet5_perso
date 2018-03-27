@@ -16,7 +16,7 @@ function addTask($task)
 	$affectedLines = $taskManager->insertTask($task);
 
 	if ($affectedLines === false) {
-    	die('Impossible d\'ajouter la tâche !');
+    	throw new Exception('Impossible d\'ajouter la tâche !');
     }
     else {
         header('Location: index.php');
@@ -30,7 +30,7 @@ function delTask($id)
 	$affectedLines = $taskManager->deleteTask($id);
 
 	if ($affectedLines === false) {
-    	die('Impossible de supprimer la tâche !');
+    	throw new Exception('Impossible de supprimer la tâche !');
     }
     else {
         header('Location: index.php');

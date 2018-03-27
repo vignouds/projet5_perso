@@ -1,22 +1,27 @@
 <?php
 require('controller.php');
 
-if (isset($_GET['action'])) {
-	if ($_GET['action'] == 'addTask') {
-		if (!empty($_POST['task'])) {
-			addTask($_POST['task']);
+try {
+	if (isset($_GET['action'])) {
+		if ($_GET['action'] == 'addTask') {
+			if (!empty($_POST['task'])) {
+				addTask($_POST['task']);
+			}
+			else {
+				throw new Exception('Champs vide !');
+			}		
+		}
+		elseif ($_GET['action'] == 'deleteTask') {
+			delTask($_GET['id']);
 		}
 		else {
-			"Erreur : champs vide !";
-		}		
-	}
-	elseif ($_GET['action'] == 'deleteTask') {
-		delTask($_GET['id']);
+			listTask();
+		}
 	}
 	else {
 		listTask();
 	}
 }
-else {
-	listTask();
+catch(Exception $e) { 
+    echo 'Erreur : ' . $e->getMessage();
 }
