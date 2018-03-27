@@ -1,17 +1,19 @@
 <?php
 
-require('model.php');
+require_once('model/TaskManager.php');
 
 function listTodo()
 {
-	$todoList = getTodo();
+	$taskManager = new TaskManager();
+    $tasks = $taskManager->getTodo();
 
 	require('todoView.php');
 }
 
 function addTodo($task)
 {
-	$affectedLines = insertTodo($task);
+    $taskManager = new TaskManager();
+	$affectedLines = $taskManager->insertTodo($task);
 
 	if ($affectedLines === false) {
     	die('Impossible d\'ajouter la tâche !');
@@ -23,7 +25,9 @@ function addTodo($task)
 
 function delTodo($id)
 {
-	$affectedLines = deleteTodo($id);
+    $taskManager = new TaskManager();
+
+	$affectedLines = $taskManager->deleteTodo($id);
 
 	if ($affectedLines === false) {
     	die('Impossible de supprimer la tâche !');

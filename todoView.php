@@ -9,7 +9,7 @@
 	<table>
 		
 			<?php
-	while ($data = $todoList->fetch()) 
+	while ($data = $tasks->fetch()) 
 	{ 
 	?>
 		<tr>
@@ -18,7 +18,7 @@
 		</tr>
 		<?php
 	}
-	$todoList->closeCursor();
+	$tasks->closeCursor();
 	?>	
 	</table>
 	<br>
