@@ -2,18 +2,18 @@
 
 require_once('model/TaskManager.php');
 
-function listTodo()
+function listTask()
 {
 	$taskManager = new TaskManager();
-    $tasks = $taskManager->getTodo();
+    $tasks = $taskManager->getTask();
 
 	require('todoView.php');
 }
 
-function addTodo($task)
+function addTask($task)
 {
     $taskManager = new TaskManager();
-	$affectedLines = $taskManager->insertTodo($task);
+	$affectedLines = $taskManager->insertTask($task);
 
 	if ($affectedLines === false) {
     	die('Impossible d\'ajouter la tâche !');
@@ -23,11 +23,11 @@ function addTodo($task)
     }
 }
 
-function delTodo($id)
+function delTask($id)
 {
     $taskManager = new TaskManager();
 
-	$affectedLines = $taskManager->deleteTodo($id);
+	$affectedLines = $taskManager->deleteTask($id);
 
 	if ($affectedLines === false) {
     	die('Impossible de supprimer la tâche !');

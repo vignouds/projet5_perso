@@ -14,7 +14,7 @@
 	?>
 		<tr>
 			<td> <?= htmlspecialchars($data['content']); ?>	</td>
-			<td><a href="index.php?action=deleteTodo&id=<?= $data['id']; ?>">Supprimer</a></td>
+			<td><a href="index.php?action=deleteTask&id=<?= $data['id']; ?>">Supprimer</a></td>
 		</tr>
 		<?php
 	}
@@ -22,8 +22,8 @@
 	?>	
 	</table>
 	<br>
-	<form action="index.php?action=addTodo" method="post">
-		<label>Ajouter une tâche : </label><input type="text" name="todo">
+	<form action="index.php?action=addTask" method="post">
+		<label>Ajouter une tâche : </label><input type="text" name="task">
 		<input type="submit" value="Envoyer">
 	</form>
 </body>

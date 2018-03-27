@@ -3,7 +3,7 @@ require_once("model/Manager.php");
 
 class TaskManager extends Manager
 {
-	public function getTodo()
+	public function getTask()
 	{
 		$db = $this->dbConnect();
 		$req = $db->query('SELECT * FROM todo');
@@ -11,7 +11,7 @@ class TaskManager extends Manager
 		return $req;
 	}
 
-	function insertTodo($task)
+	function insertTask($task)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('INSERT INTO todo (content) VALUES (?)');
@@ -20,7 +20,7 @@ class TaskManager extends Manager
 		return $affectedLines;
 	}
 
-	function deleteTodo($id)
+	function deleteTask($id)
 	{
 		$db = $this->dbConnect();
 		$req = $db->prepare('DELETE FROM todo WHERE id = ?');

@@ -2,21 +2,21 @@
 require('controller.php');
 
 if (isset($_GET['action'])) {
-	if ($_GET['action'] == 'addTodo') {
-		if (!empty($_POST['todo'])) {
-			addTodo($_POST['todo']);
+	if ($_GET['action'] == 'addTask') {
+		if (!empty($_POST['task'])) {
+			addTask($_POST['task']);
 		}
 		else {
 			"Erreur : champs vide !";
 		}		
 	}
-	elseif ($_GET['action'] == 'deleteTodo') {
-		delTodo($_GET['id']);
+	elseif ($_GET['action'] == 'deleteTask') {
+		delTask($_GET['id']);
 	}
 	else {
-		listTodo();
+		listTask();
 	}
 }
 else {
-	listTodo();
+	listTask();
 }
