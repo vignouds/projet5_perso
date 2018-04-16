@@ -10,16 +10,13 @@
         <?= $content ?>
         	<h2>A faire plus tard</h2>
 			<ul>
-				<li>Maj profils et CV (supprimer numéro de tel ?)</li>
-				<li>Message sur facebook OC "j'ai trouvé un job"</li>
 				<li>Avancer écriture</li>
 				<li>tester 1&1 mywebsite</li>
-				<li>Acheter clavier ?</li>
 				<li>cartographie de mots de passe</li>
-				<li>reprendre espagnol babel</li>
 				<li>reprendre anglais babel</li>
 				<li>Regler problème de chauffe de l'ancien ordi</li>
 				<li>Cloturer livret A</li>
+				<li>Contrôle technique de la voiture (août 2019)</li>
 			</ul>
 			<h2>Idées</h2>
 			<ul>
@@ -27,8 +24,8 @@
 				<li>Vendre d'autres trucs ?</li>
 				<li>Apprendre dessin</li>
 				<li>Se former design</li>
+				<li>Acheter clavier ?</li>
 			</ul>
-
     	</section>
         <section>
 		    <h2>Projets en cours</h2>
